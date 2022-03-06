@@ -6,8 +6,12 @@
       "strict": true,
       "declaration": true,
       "outDir": "dist",
-      "sourceMap": true
+      "sourceMap": true,
+      /* The following support more verbose data module testing */
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "__tests__/models"],
     "exclude": ["node_modules", "**/*.spec.ts"]
   }
