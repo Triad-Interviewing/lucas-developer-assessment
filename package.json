@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
-    "start": "tsc && node ./dist/index.js",
+    "tsc": "npx tsc",
+    "clean:windows": "rmdir dist /s",
+    "clean:unix": "rm -rf dist",
+    "start:w": "npm run clean:windows && npx tsc && node ./dist/src/index.js",
+    "start:u": "npm run clean:windows && npx tsc && node ./dist/src/index.js",
+    "start": "npx tsc && node ./dist/src/index.js",
     "test": "jest",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
   },
@@ -20,8 +24,11 @@
   },
   "homepage": "https://github.com/Triad-Behavioral-Health/developer-assessment-template#readme",
   "dependencies": {
+    "@types/validator": "^13.7.1",
+    "class-validator": "^0.13.2",
     "koa": "^2.13.0",
-    "koa-router": "^9.1.0"
+    "koa-router": "^9.1.0",
+    "supertest": "^6.2.2"
   },
   "devDependencies": {
     "@types/jest": "^26.0.9",
@@ -33,6 +40,6 @@
     "eslint": "^7.6.0",
     "jest": "^26.2.2",
     "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.10"
   }
 }
